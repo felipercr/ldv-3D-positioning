@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>418</width>
-    <height>238</height>
+    <width>461</width>
+    <height>263</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,7 +31,7 @@
      <number>0</number>
     </property>
     <item>
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="top_frame">
       <property name="maximumSize">
        <size>
         <width>16777215</width>
@@ -67,7 +67,7 @@
         <number>0</number>
        </property>
        <item>
-        <widget class="QWidget" name="widget_3" native="true">
+        <widget class="QWidget" name="menu_frame" native="true">
          <property name="maximumSize">
           <size>
            <width>40</width>
@@ -94,7 +94,7 @@
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frame_5">
+           <widget class="QFrame" name="top_menu_button">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -155,7 +155,7 @@ QPushButton:hover{
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_3">
+        <widget class="QFrame" name="top_frame_2">
          <property name="minimumSize">
           <size>
            <width>0</width>
@@ -188,7 +188,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <item alignment="Qt::AlignRight">
-           <widget class="QFrame" name="frame_7">
+           <widget class="QFrame" name="top_buttons">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -212,7 +212,7 @@ QPushButton:hover{
               <number>0</number>
              </property>
              <item>
-              <widget class="QPushButton" name="pushButton">
+              <widget class="QPushButton" name="minim">
                <property name="minimumSize">
                 <size>
                  <width>40</width>
@@ -296,7 +296,7 @@ QPushButton:hover{
      </widget>
     </item>
     <item>
-     <widget class="QFrame" name="frame_2">
+     <widget class="QFrame" name="central_frame">
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 255);</string>
       </property>
@@ -323,7 +323,7 @@ QPushButton:hover{
         <number>0</number>
        </property>
        <item>
-        <widget class="QWidget" name="widget" native="true">
+        <widget class="QWidget" name="side_menu" native="true">
          <property name="minimumSize">
           <size>
            <width>40</width>
@@ -356,7 +356,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <item alignment="Qt::AlignTop">
-           <widget class="QFrame" name="frame_4">
+           <widget class="QFrame" name="menu_buttons">
             <property name="frameShape">
              <enum>QFrame::NoFrame</enum>
             </property>
@@ -488,7 +488,7 @@ QPushButton:hover{
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="frame_6">
+           <widget class="QFrame" name="main_frame">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -512,7 +512,7 @@ QPushButton:hover{
               <number>0</number>
              </property>
              <item>
-              <widget class="QStackedWidget" name="stackedWidget">
+              <widget class="QStackedWidget" name="stacked_pages">
                <property name="minimumSize">
                 <size>
                  <width>0</width>
@@ -520,7 +520,7 @@ QPushButton:hover{
                 </size>
                </property>
                <property name="currentIndex">
-                <number>0</number>
+                <number>1</number>
                </property>
                <widget class="QWidget" name="page_3"/>
                <widget class="QWidget" name="page_4"/>
