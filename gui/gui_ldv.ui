@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>461</width>
-    <height>263</height>
+    <width>488</width>
+    <height>317</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -144,7 +144,17 @@ QPushButton:hover{
 }</string>
                </property>
                <property name="text">
-                <string>m_btn_0</string>
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>imgs/menu.png</normaloff>imgs/menu.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -394,7 +404,9 @@ QPushButton:hover{
                 <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
 	background-color: rgb(186, 217, 74);
-	border: 0px solid
+	padding: 10px;
+	border: 0px solid;
+	text-align: left;
 }
 
 QPushButton:hover{
@@ -404,6 +416,16 @@ QPushButton:hover{
                </property>
                <property name="text">
                 <string>m_btn_1</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>imgs/home.png</normaloff>imgs/home.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -422,16 +444,29 @@ QPushButton:hover{
                 <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
 	background-color: rgb(186, 217, 74);
-	border: 0px solid
+	padding: 10px;
+	border: 0px solid;
+	text-align: left;
 }
 
 QPushButton:hover{
 	color: rgb(0, 0, 0);
 	background-color: rgb(127, 127, 127);
-}</string>
+}
+</string>
                </property>
                <property name="text">
                 <string>m_btn_2</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>imgs/data.png</normaloff>imgs/data.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -450,7 +485,9 @@ QPushButton:hover{
                 <string notr="true">QPushButton{
 	color: rgb(255, 255, 255);
 	background-color: rgb(186, 217, 74);
-	border: 0px solid
+	padding: 10px;
+	border: 0px solid;
+	text-align: left;
 }
 
 QPushButton:hover{
@@ -460,6 +497,16 @@ QPushButton:hover{
                </property>
                <property name="text">
                 <string>m_btn_3</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>imgs/info.png</normaloff>imgs/info.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
                </property>
               </widget>
              </item>
@@ -522,8 +569,8 @@ QPushButton:hover{
                <property name="currentIndex">
                 <number>1</number>
                </property>
-               <widget class="QWidget" name="page_3"/>
-               <widget class="QWidget" name="page_4"/>
+               <widget class="QWidget" name="page_1"/>
+               <widget class="QWidget" name="page_2"/>
               </widget>
              </item>
             </layout>
@@ -538,6 +585,8 @@ QPushButton:hover{
    </layout>
   </widget>
  </widget>
- <resources/>
+ <resources>
+  <include location="imgs/rsc.qrc"/>
+ </resources>
  <connections/>
 </ui>
