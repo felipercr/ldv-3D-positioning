@@ -9,12 +9,24 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QFileDialog
 
 
 class Ui_MainWindow(object):
+
+    ##################################################
+    #                    Functions                   #
+    ##################################################
+
+    def file_explorer(self):
+        f = QFileDialog.getOpenFileName()
+        print(f)
+        pass
+
+    ##################################################
+
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(488, 317)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.verticalLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -22,7 +34,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setObjectName("verticalLayout")
         self.top_frame = QtWidgets.QFrame(self.centralwidget)
-        self.top_frame.setMaximumSize(QtCore.QSize(16777215, 40))
+        self.top_frame.setMinimumSize(QtCore.QSize(16777215, 100))
         self.top_frame.setStyleSheet("background-color: rgb(15, 118, 151);")
         self.top_frame.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.top_frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -33,7 +45,7 @@ class Ui_MainWindow(object):
         self.horizontalLayout_2.setSpacing(0)
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
         self.menu_frame = QtWidgets.QWidget(self.top_frame)
-        self.menu_frame.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.menu_frame.setMaximumSize(QtCore.QSize(100, 16777215))
         self.menu_frame.setStyleSheet("background-color: rgb(186, 217, 74);")
         self.menu_frame.setObjectName("menu_frame")
         self.verticalLayout_4 = QtWidgets.QVBoxLayout(self.menu_frame)
@@ -48,14 +60,14 @@ class Ui_MainWindow(object):
         self.verticalLayout_5.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_5.setSpacing(0)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
-        self.m_btn_0 = QtWidgets.QPushButton(self.top_menu_button)
+        self.m_btn_expand = QtWidgets.QPushButton(self.top_menu_button)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Minimum, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.m_btn_0.sizePolicy().hasHeightForWidth())
-        self.m_btn_0.setSizePolicy(sizePolicy)
-        self.m_btn_0.setMinimumSize(QtCore.QSize(40, 40))
-        self.m_btn_0.setStyleSheet("QPushButton{\n"
+        sizePolicy.setHeightForWidth(self.m_btn_expand.sizePolicy().hasHeightForWidth())
+        self.m_btn_expand.setSizePolicy(sizePolicy)
+        self.m_btn_expand.setMinimumSize(QtCore.QSize(100, 100))
+        self.m_btn_expand.setStyleSheet("QPushButton{\n"
 "    color: rgb(255, 255, 255);\n"
 "    background-color: rgb(186, 217, 74);\n"
 "    border: 0px solid\n"
@@ -65,17 +77,17 @@ class Ui_MainWindow(object):
 "    color: rgb(0, 0, 0);\n"
 "    background-color: rgb(127, 127, 127);\n"
 "}")
-        self.m_btn_0.setText("")
+        self.m_btn_expand.setText("")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/menu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.m_btn_0.setIcon(icon)
-        self.m_btn_0.setIconSize(QtCore.QSize(20, 20))
-        self.m_btn_0.setObjectName("m_btn_0")
-        self.verticalLayout_5.addWidget(self.m_btn_0)
+        self.m_btn_expand.setIcon(icon)
+        self.m_btn_expand.setIconSize(QtCore.QSize(50, 50))
+        self.m_btn_expand.setObjectName("m_btn_expand")
+        self.verticalLayout_5.addWidget(self.m_btn_expand)
         self.verticalLayout_4.addWidget(self.top_menu_button)
         self.horizontalLayout_2.addWidget(self.menu_frame)
         self.top_frame_2 = QtWidgets.QFrame(self.top_frame)
-        self.top_frame_2.setMinimumSize(QtCore.QSize(0, 40))
+        self.top_frame_2.setMinimumSize(QtCore.QSize(0, 100))
         self.top_frame_2.setFrameShape(QtWidgets.QFrame.NoFrame)
         self.top_frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.top_frame_2.setObjectName("top_frame_2")
@@ -84,52 +96,6 @@ class Ui_MainWindow(object):
         self.horizontalLayout_4.setContentsMargins(0, 0, 0, 0)
         self.horizontalLayout_4.setSpacing(0)
         self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.top_buttons = QtWidgets.QFrame(self.top_frame_2)
-        self.top_buttons.setFrameShape(QtWidgets.QFrame.NoFrame)
-        self.top_buttons.setFrameShadow(QtWidgets.QFrame.Plain)
-        self.top_buttons.setObjectName("top_buttons")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.top_buttons)
-        self.horizontalLayout_3.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.minim = QtWidgets.QPushButton(self.top_buttons)
-        self.minim.setMinimumSize(QtCore.QSize(40, 40))
-        self.minim.setStyleSheet("QPushButton{\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(15, 118, 151);\n"
-"    border: 0px solid\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(255, 96, 117);\n"
-"}")
-        self.minim.setObjectName("minim")
-        self.horizontalLayout_3.addWidget(self.minim)
-        self.aum = QtWidgets.QPushButton(self.top_buttons)
-        self.aum.setMinimumSize(QtCore.QSize(40, 40))
-        self.aum.setStyleSheet("QPushButton{\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(15, 118, 151);\n"
-"    border: 0px solid\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(255, 96, 117);\n"
-"}")
-        self.aum.setObjectName("aum")
-        self.horizontalLayout_3.addWidget(self.aum)
-        self.close = QtWidgets.QPushButton(self.top_buttons)
-        self.close.setMinimumSize(QtCore.QSize(40, 40))
-        self.close.setMaximumSize(QtCore.QSize(40, 16777215))
-        self.close.setStyleSheet("QPushButton{\n"
-"    color: rgb(255, 255, 255);\n"
-"    background-color: rgb(15, 118, 151);\n"
-"    border: 0px solid\n"
-"}\n"
-"QPushButton:hover{\n"
-"    background-color: rgb(255, 96, 117);\n"
-"}")
-        self.close.setObjectName("close")
-        self.horizontalLayout_3.addWidget(self.close)
-        self.horizontalLayout_4.addWidget(self.top_buttons, 0, QtCore.Qt.AlignRight)
         self.horizontalLayout_2.addWidget(self.top_frame_2)
         self.verticalLayout.addWidget(self.top_frame)
         self.central_frame = QtWidgets.QFrame(self.centralwidget)
@@ -142,8 +108,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.side_menu = QtWidgets.QWidget(self.central_frame)
-        self.side_menu.setMinimumSize(QtCore.QSize(40, 0))
-        self.side_menu.setMaximumSize(QtCore.QSize(40, 16777215))
+        self.side_menu.setMinimumSize(QtCore.QSize(100, 0))
+        self.side_menu.setMaximumSize(QtCore.QSize(100, 16777215))
         self.side_menu.setStyleSheet("background-color: rgb(186, 217, 74);")
         self.side_menu.setObjectName("side_menu")
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.side_menu)
@@ -158,13 +124,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_3.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_3.setSpacing(0)
         self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.m_btn_1 = QtWidgets.QPushButton(self.menu_buttons)
-        self.m_btn_1.setMinimumSize(QtCore.QSize(0, 40))
-        self.m_btn_1.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.m_btn_1.setStyleSheet("QPushButton{\n"
+        self.m_btn_home = QtWidgets.QPushButton(self.menu_buttons)
+        self.m_btn_home.setMinimumSize(QtCore.QSize(0, 100))
+        self.m_btn_home.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.m_btn_home.setStyleSheet("QPushButton{\n"
 "    color: rgb(255, 255, 255);\n"
 "    background-color: rgb(186, 217, 74);\n"
-"    padding: 10px;\n"
+"    padding: 25px;\n"
 "    border: 0px solid;\n"
 "    text-align: left;\n"
 "}\n"
@@ -175,17 +141,17 @@ class Ui_MainWindow(object):
 "}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.m_btn_1.setIcon(icon1)
-        self.m_btn_1.setIconSize(QtCore.QSize(20, 20))
-        self.m_btn_1.setObjectName("m_btn_1")
-        self.verticalLayout_3.addWidget(self.m_btn_1)
-        self.m_btn_2 = QtWidgets.QPushButton(self.menu_buttons)
-        self.m_btn_2.setMinimumSize(QtCore.QSize(0, 40))
-        self.m_btn_2.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.m_btn_2.setStyleSheet("QPushButton{\n"
+        self.m_btn_home.setIcon(icon1)
+        self.m_btn_home.setIconSize(QtCore.QSize(50, 50))
+        self.m_btn_home.setObjectName("m_btn_home")
+        self.verticalLayout_3.addWidget(self.m_btn_home)
+        self.m_btn_data = QtWidgets.QPushButton(self.menu_buttons)
+        self.m_btn_data.setMinimumSize(QtCore.QSize(0, 100))
+        self.m_btn_data.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.m_btn_data.setStyleSheet("QPushButton{\n"
 "    color: rgb(255, 255, 255);\n"
 "    background-color: rgb(186, 217, 74);\n"
-"    padding: 10px;\n"
+"    padding: 25px;\n"
 "    border: 0px solid;\n"
 "    text-align: left;\n"
 "}\n"
@@ -197,17 +163,17 @@ class Ui_MainWindow(object):
 "")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/data.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.m_btn_2.setIcon(icon2)
-        self.m_btn_2.setIconSize(QtCore.QSize(20, 20))
-        self.m_btn_2.setObjectName("m_btn_2")
-        self.verticalLayout_3.addWidget(self.m_btn_2)
-        self.m_btn_3 = QtWidgets.QPushButton(self.menu_buttons)
-        self.m_btn_3.setMinimumSize(QtCore.QSize(0, 40))
-        self.m_btn_3.setFocusPolicy(QtCore.Qt.NoFocus)
-        self.m_btn_3.setStyleSheet("QPushButton{\n"
+        self.m_btn_data.setIcon(icon2)
+        self.m_btn_data.setIconSize(QtCore.QSize(50, 50))
+        self.m_btn_data.setObjectName("m_btn_data")
+        self.verticalLayout_3.addWidget(self.m_btn_data)
+        self.m_btn_settings = QtWidgets.QPushButton(self.menu_buttons)
+        self.m_btn_settings.setMinimumSize(QtCore.QSize(0, 100))
+        self.m_btn_settings.setFocusPolicy(QtCore.Qt.NoFocus)
+        self.m_btn_settings.setStyleSheet("QPushButton{\n"
 "    color: rgb(255, 255, 255);\n"
 "    background-color: rgb(186, 217, 74);\n"
-"    padding: 10px;\n"
+"    padding: 25px;\n"
 "    border: 0px solid;\n"
 "    text-align: left;\n"
 "}\n"
@@ -217,12 +183,42 @@ class Ui_MainWindow(object):
 "    background-color: rgb(127, 127, 127);\n"
 "}")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/info.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.m_btn_3.setIcon(icon3)
-        self.m_btn_3.setIconSize(QtCore.QSize(20, 20))
-        self.m_btn_3.setObjectName("m_btn_3")
-        self.verticalLayout_3.addWidget(self.m_btn_3)
+        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/settings.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.m_btn_settings.setIcon(icon3)
+        self.m_btn_settings.setIconSize(QtCore.QSize(50, 50))
+        self.m_btn_settings.setObjectName("m_btn_settings")
+        self.verticalLayout_3.addWidget(self.m_btn_settings)
         self.verticalLayout_2.addWidget(self.menu_buttons, 0, QtCore.Qt.AlignTop)
+        self.frame = QtWidgets.QFrame(self.side_menu)
+        self.frame.setFrameShape(QtWidgets.QFrame.NoFrame)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Plain)
+        self.frame.setLineWidth(0)
+        self.frame.setObjectName("frame")
+        self.verticalLayout_8 = QtWidgets.QVBoxLayout(self.frame)
+        self.verticalLayout_8.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout_8.setSpacing(0)
+        self.verticalLayout_8.setObjectName("verticalLayout_8")
+        self.m_btn_info = QtWidgets.QPushButton(self.frame)
+        self.m_btn_info.setMinimumSize(QtCore.QSize(100, 100))
+        self.m_btn_info.setStyleSheet("QPushButton{\n"
+"    color: rgb(255, 255, 255);\n"
+"    background-color: rgb(186, 217, 74);\n"
+"    padding: 25px;\n"
+"    border: 0px solid;\n"
+"    text-align: left;\n"
+"}\n"
+"\n"
+"QPushButton:hover{\n"
+"    color: rgb(0, 0, 0);\n"
+"    background-color: rgb(127, 127, 127);\n"
+"}")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap("C:\\Users\\felipe.ribeiro\\Desktop\\felipe\\ldv\\ldv_3D_positioning\\gui\\imgs/info.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.m_btn_info.setIcon(icon4)
+        self.m_btn_info.setIconSize(QtCore.QSize(50, 50))
+        self.m_btn_info.setObjectName("m_btn_info")
+        self.verticalLayout_8.addWidget(self.m_btn_info)
+        self.verticalLayout_2.addWidget(self.frame, 0, QtCore.Qt.AlignBottom)
         self.horizontalLayout.addWidget(self.side_menu)
         self.widget_2 = QtWidgets.QWidget(self.central_frame)
         self.widget_2.setObjectName("widget_2")
@@ -239,11 +235,13 @@ class Ui_MainWindow(object):
         self.verticalLayout_7.setSpacing(0)
         self.verticalLayout_7.setObjectName("verticalLayout_7")
         self.stacked_pages = QtWidgets.QStackedWidget(self.main_frame)
-        self.stacked_pages.setMinimumSize(QtCore.QSize(0, 40))
+        self.stacked_pages.setMinimumSize(QtCore.QSize(0, 100))
         self.stacked_pages.setObjectName("stacked_pages")
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
         self.stacked_pages.addWidget(self.page_1)
+
+
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.stacked_pages.addWidget(self.page_2)
@@ -253,20 +251,26 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.central_frame)
         MainWindow.setCentralWidget(self.centralwidget)
 
+        ##################################################
+        #                    Functions                   #
+        ##################################################
+
+        self.m_btn_home.clicked.connect(self.file_explorer)
+
+        ##################################################
+
         self.retranslateUi(MainWindow)
-        self.stacked_pages.setCurrentIndex(1)
+        self.stacked_pages.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.minim.setText(_translate("MainWindow", "minim"))
-        self.aum.setText(_translate("MainWindow", "aum"))
-        self.close.setText(_translate("MainWindow", "close"))
-        self.m_btn_1.setText(_translate("MainWindow", "m_btn_1"))
-        self.m_btn_2.setText(_translate("MainWindow", "m_btn_2"))
-        self.m_btn_3.setText(_translate("MainWindow", "m_btn_3"))
-import rsc_rc
+        self.m_btn_home.setText(_translate("MainWindow", "m_btn_1"))
+        self.m_btn_data.setText(_translate("MainWindow", "m_btn_2"))
+        self.m_btn_settings.setText(_translate("MainWindow", "m_btn_3"))
+        self.m_btn_info.setText(_translate("MainWindow", "PushButton"))
+#import rsc_rc
 
 
 if __name__ == "__main__":
@@ -275,5 +279,5 @@ if __name__ == "__main__":
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
     ui.setupUi(MainWindow)
-    MainWindow.show()
+    MainWindow.showMaximized()
     sys.exit(app.exec_())
