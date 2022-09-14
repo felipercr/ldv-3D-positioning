@@ -9,10 +9,10 @@ import numpy as np
 # 2   12    20    17   ->  Generic example
 # 3   ... 
 
-# Utilizar . para separar a parte decimal
+# Use . as a decimal point
 
 ##################################################
 
 def points_matrix():
-    matrix = pd.read_excel('matrix.xlsx')
+    matrix = pd.read_excel('../matrix.xlsx')
     return(matrix.to_numpy())
