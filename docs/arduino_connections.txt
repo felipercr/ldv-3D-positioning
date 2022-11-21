@@ -1,10 +1,12 @@
-blue           -> pul X     -> pin 24
-green          -> pul Y     -> pin 25
-brown          -> pul Z     -> pin 26
+Physical connections made in the Arduino board
 
-white-blue     -> dir X     -> pin 30
-white-green    -> dir Y     -> pin 31
-white-brown    -> dir Z     -> pin 32
+blue           -> pul X        -> pin 24
+green          -> pul Y        -> pin 25
+brown          -> pul Z        -> pin 26
+
+white-blue     -> dir X        -> pin 30
+white-green    -> dir Y        -> pin 31
+white-brown    -> dir Z        -> pin 32
 
 orange         -> arduino vcc
 white-orange   -> arduino gnd
