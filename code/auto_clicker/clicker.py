@@ -1,9 +1,22 @@
 import pyautogui as pag
 import time
 
-time.sleep(2)
-location = pag.locateOnScreen('imgs/num_9.png')
-while location == None: location = pag.locateOnScreen('imgs/num_9.png')
+# auto_clicker/imgs/acquire.png
 
-pag.click('imgs/num_9.png')
+button = 'acquire.png'
 
+def acquire(last):
+
+    location = None
+    while location == None: location = pag.locateCenterOnScreen(f'auto_clicker/imgs/{button}', confidence=0.7)
+
+    pag.click(location)
+
+    time.sleep(0.2)    
+
+    if last == True: return
+
+    location = None
+    while location == None: location = pag.locateCenterOnScreen(f'auto_clicker/imgs/{button}', confidence=0.7)
+
+    return

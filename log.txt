@@ -1,6 +1,6 @@
-Zero (x,y,z): 4 3 2
+Zero (x,y,z): 1 1 1
 Feedrate (mm/s): 1000
-Last Position (x,y,z): 19.953 19.953 10.0
+Last Position (x,y,z): 0.0 0.0 0.0
 
 --------------------------------------
 
@@ -11,4 +11,8 @@ Reset MPos
 X4.0 Y3.0 Z2.0
 Reset MPos
 X10.0 Y10.0 Z10.0
-X20.0 Y20.0 Z10.0
+X20.0 Y20.0 Z20.0
+X40.0 Y40.0 Z40.0
+X50.0 Y50.0 Z50.0
+X0.0 Y0.0 Z0.0
+Full cycle completed!

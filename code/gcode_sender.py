@@ -3,6 +3,7 @@ import serial
 import serial.tools.list_ports
 import time
 from points_matrix import points_matrix
+from auto_clicker.clicker import acquire
 
 class movement():
     def __init__(self):
@@ -48,7 +49,7 @@ class movement():
             self.fdr = lines[2]
 
 
-    def move(self, point):
+    def move(self, point, message=None):
 
         x = float("{:.3f}".format(float(point[0])))
         y = float("{:.3f}".format(float(point[1])))
@@ -58,6 +59,7 @@ class movement():
         self.g.flushOutput()
         #time.sleep(1)
 
+        if message: print(f'{message}')
         print(f'Command: X{x} Y{y} Z{z}')
 
         with open(self.log_path, 'r') as log:
@@ -175,16 +177,20 @@ class movement():
         n_points = len(matrix)
         completed = 0
 
+        last = False
+
         for line in matrix:
-            self.move(line)
-            while self.check_pos(line) == False: pass
-
-        #################LASER#################
-        #################LASER#################
-
             completed = completed + 1
+            if completed == n_points: last = True
 
-            print(f'Done - {completed} / {n_points}\n')
+            self.move(line, f'{completed} / {n_points}')
+            while self.check_pos(line) == False: pass            
+
+        #################LASER#################
+            acquire(last)
+        #################LASER#################
+
+            print(f'Done\n')
             time.sleep(0.2)
 
         print('Full cycle completed!')
@@ -295,7 +301,7 @@ class movement():
 
             point = (x, y, z)
 
-        self.move(point)
+        self.move(point, 'Move to zero and reset MPos')
 
         #Close and reopen communication to reset MPos
         self.g.close()
@@ -311,7 +317,7 @@ class movement():
             for line in lines:
                 log.write(line)
 
-        print('Done - Move to zero and reset MPos\n')
+        print('Done\n')
 
     #Close serial communication
     def finish(self):

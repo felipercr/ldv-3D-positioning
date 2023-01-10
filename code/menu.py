@@ -7,7 +7,7 @@ def menu(m):
 
     while True:
         print('Menu:')
-        print('  1. Full cycle')
+        print('  1. Full cycle (Remember to open BSA Flow)')
         print('  2. Home machine')
         print('  3. Set zero')
         print('  4. Set feedrate\n')
